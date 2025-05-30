@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #f5f7fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eticaretsepetsistemi.e_ticaret.Controller.EkleController">
+
+    <!-- Başlık Alanı -->
+    <HBox style="-fx-background-color: #3498db; -fx-padding: 15; -fx-alignment: center;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="YENİ ÜRÜN EKLE" />
+    </HBox>
+
+    <!-- Form Alanı -->
+    <VBox layoutX="76.0" layoutY="80" prefHeight="386.0" prefWidth="578.0" spacing="20" style="-fx-background-color: white; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+        <!-- Ürün Adı -->
+        <GridPane hgap="10" vgap="10">
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Ürün Adı:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="urunAdiField" promptText="Ürün adını giriniz" style="-fx-pref-width: 350; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Fiyat ve Stok (Yan Yana) -->
+        <HBox spacing="30">
+            <GridPane hgap="10" vgap="10">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Fiyat:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="fiyatField" promptText="0.00" style="-fx-pref-width: 160; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <GridPane.margin>
+                        <Insets right="20" />
+                    </GridPane.margin>
+                </TextField>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <GridPane hgap="10" vgap="10">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Stok Miktarı:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="stokField" promptText="0" style="-fx-pref-width: 160; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+        </HBox>
+
+        <!-- Kategori -->
+        <GridPane hgap="10" vgap="10">
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Kategori:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="kategoriComboBox" promptText="Kategori seçiniz" style="-fx-pref-width: 350; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Açıklama -->
+        <GridPane hgap="10" vgap="10">
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Açıklama:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextArea fx:id="aciklamaField" promptText="Ürün açıklaması giriniz" style="-fx-pref-width: 350; -fx-pref-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Butonlar -->
+        <HBox alignment="CENTER_RIGHT" spacing="20" style="-fx-padding: 10 0 0 0;">
+            <Button fx:id="temizleBtn" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 120; -fx-pref-height: 40;" text="TEMİZLE" />
+            <Button fx:id="ekleBtn" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 120; -fx-pref-height: 40;" text="KAYDET" />
+        </HBox>
+    </VBox>
+
+    <!-- Footer -->
+    <HBox style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-alignment: center;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label style="-fx-text-fill: #7f8c8d;" text="© 2023 E-Ticaret Sistemi" />
+    </HBox>
+
+</AnchorPane>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="542.0" prefWidth="700.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eticaretsepetsistemi.e_ticaret.Controller.LoginController">
+
+    <!-- Ana Kart -->
+    <VBox alignment="TOP_CENTER" prefHeight="426.0" prefWidth="500.0" spacing="20" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="50">
+
+        <!-- Başlık -->
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db; -fx-padding: 20 0 0 0;" text="E-TİCARET SİSTEMİ" />
+        <Label style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d; -fx-padding: 0 0 20 0;" text="Hoş Geldiniz" />
+
+        <!-- TabPane -->
+        <TabPane prefHeight="318.0" prefWidth="500" style="-fx-background-color: transparent; -fx-tab-min-width: 250px; -fx-tab-max-width: 250px;">
+            <tabs>
+                <!-- Giriş Yap Sekmesi -->
+                <Tab style="-fx-font-weight: bold;" text="Giriş Yap">
+                    <content>
+                        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+                            <GridPane hgap="10" vgap="15">
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="İsim:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="loginUsernameField" promptText="kullanıcı adı" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Şifre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <PasswordField fx:id="loginPasswordField" promptText="Şifreniz" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+
+                            <Button fx:id="loginButton" onAction="#girisYap" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 300; -fx-pref-height: 40; -fx-font-size: 14px;" text="GİRİŞ YAP" />
+
+                            <Hyperlink style="-fx-text-fill: #7f8c8d; -fx-border-color: transparent;" text="Şifremi Unuttum" />
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <!-- Kayıt Ol Sekmesi -->
+                <Tab style="-fx-font-weight: bold;" text="Kayıt Ol">
+                    <content>
+                        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+                            <GridPane hgap="10" vgap="15">
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Ad:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="signInNameField" promptText="Adınız" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Soyad:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="signInSurnameField" promptText="Soyadınız" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="E-posta:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <TextField fx:id="signInUsernameField" promptText="E-posta adresiniz" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Şifre:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <PasswordField fx:id="signInPasswordField" promptText="Şifreniz" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                <Label style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Şifre (Tekrar):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                <PasswordField fx:id="signInPasswordRepeatField" promptText="Şifrenizi tekrar girin" style="-fx-pref-width: 300; -fx-pref-height: 35;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <columnConstraints>
+                           <ColumnConstraints />
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                        </rowConstraints>
+                            </GridPane>
+
+                            <Button fx:id="signInButton" onAction="#kayitOl" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 300; -fx-pref-height: 40; -fx-font-size: 14px;" text="KAYIT OL" />
+
+                            <Label style="-fx-text-fill: #7f8c8d;" text="Zaten hesabınız var mı? Giriş Yap" />
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </VBox>
+
+    <!-- Footer -->
+    <HBox alignment="CENTER" prefHeight="46.0" prefWidth="700.0" style="-fx-background-color: #ecf0f1; -fx-padding: 10;" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <Label style="-fx-text-fill: #7f8c8d;" text="© 2023 E-Ticaret Sistemi | Tüm Hakları Saklıdır" />
+    </HBox>
+
+</AnchorPane>

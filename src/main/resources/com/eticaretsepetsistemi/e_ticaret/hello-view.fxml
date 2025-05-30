@@ -38,14 +38,15 @@
                 </padding>
                 <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Ürünler" />
 
-                <TableView fx:id="urunTablosu" style="-fx-base: #ecf0f1;">
+                <TableView fx:id="urunTablosu" prefHeight="300" prefWidth="600">
                     <columns>
-                        <TableColumn prefWidth="150" text="Ürün Adı" />
-                        <TableColumn prefWidth="80" text="Fiyat" />
-                        <TableColumn prefWidth="60" text="Stok" />
-                        <TableColumn prefWidth="100" text="İşlem" />
+                        <TableColumn fx:id="urunAdiColumn" text="Ürün Adı" prefWidth="150"/>
+                        <TableColumn fx:id="fiyatColumn" text="Fiyat" prefWidth="100"/>
+                        <TableColumn fx:id="stokColumn" text="Stok" prefWidth="100"/>
+                        <TableColumn fx:id="kategoriColumn" text="Kategori" prefWidth="150"/>
                     </columns>
                 </TableView>
+
 
                 <HBox alignment="CENTER_RIGHT" spacing="10">
                     <Label text="Toplam Ürün:" />

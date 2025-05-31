@@ -34,10 +34,11 @@
     <VBox spacing="10" style="-fx-padding: 10 15;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="110">
         <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Kategoriler" />
         <HBox spacing="15">
-            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Köpek Ürünleri" />
-            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Kedi Ürünleri" />
-            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Kuş Ürünleri" />
-            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Balık Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Elektronik Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Giyim Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Kitap Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Kozmetik Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Ev ve Yaşam Ürünleri" />
             <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Tüm Kategoriler" />
         </HBox>
     </VBox>

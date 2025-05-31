@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -162,6 +163,18 @@ public class HelloController {
 
 
     }
+    @FXML
+    private void Cikisyap() throws IOException {
+        HelloApplication.setRoot("log_in_view");
+        Stage stage = (Stage) seciliUrunAdi.getScene().getWindow();
+        stage.close();
+
+    }
+    @FXML
+    private void Profilegit() throws IOException {
+        HelloApplication.setRoot("Profile-view");
+    }
+
 
     // Sepet.java işlemleri için metodlar
 
@@ -174,5 +187,11 @@ public class HelloController {
     @FXML
     private void sepetiTemizle() {
         // Sepeti boşaltma
+    }
+    @FXML
+    private void AnaSayfa() throws IOException {
+        Stage stage = (Stage) seciliUrunAdi.getScene().getWindow();
+        stage.close();
+        HelloApplication.setRoot("Main-view");
     }
 }

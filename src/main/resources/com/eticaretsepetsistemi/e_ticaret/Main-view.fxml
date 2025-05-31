@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eticaretsepetsistemi.e_ticaret.Controller.MainSectionController">
+
+    <!-- Üst Menü Çubuğu -->
+    <HBox style="-fx-background-color: #2c3e50; -fx-padding: 10;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="E-Ticaret Petsistemi" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <HBox alignment="CENTER_RIGHT" spacing="15">
+            <Button style="-fx-text-fill: white; -fx-background-color: transparent;" text="Ana Sayfa" />
+
+            <Button onAction="#giris" style="-fx-text-fill: white; -fx-background-color: transparent;" text="Profil" />
+        </HBox>
+    </HBox>
+
+    <!-- Arama Çubuğu -->
+    <HBox alignment="CENTER" spacing="10" style="-fx-padding: 15;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="50">
+        <TextField fx:id="searchField" promptText="Ürün ara..." style="-fx-pref-width: 400px; -fx-pref-height: 35px;" />
+        <Button onAction="#handleSearch" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-pref-height: 35px; -fx-font-weight: bold;" text="Ara" />
+    </HBox>
+
+    <!-- Kategoriler -->
+    <VBox spacing="10" style="-fx-padding: 10 15;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="110">
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Kategoriler" />
+        <HBox spacing="15">
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Köpek Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Kedi Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Kuş Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Balık Ürünleri" />
+            <Button style="-fx-background-color: #ecf0f1; -fx-pref-width: 120; -fx-pref-height: 80;" text="Tüm Kategoriler" />
+        </HBox>
+    </VBox>
+
+    <!-- Popüler Ürünler (Dinamik Liste) -->
+    <VBox spacing="15" style="-fx-padding: 20;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="220">
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Popüler Ürünler" />
+
+        <ListView fx:id="urunListView" style="-fx-background-color: transparent; -fx-pref-height: 300;">
+            <!-- Özel hücre tasarımı için cell factory controller'da tanımlanacak -->
+        </ListView>
+    </VBox>
+
+    <!-- Alt Bilgi -->
+    <HBox alignment="CENTER" style="-fx-background-color: #34495e; -fx-padding: 15;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <Label style="-fx-text-fill: white;" text="© 2023 E-Ticaret Petsistemi - Tüm Hakları Saklıdır" />
+    </HBox>
+
+</AnchorPane>

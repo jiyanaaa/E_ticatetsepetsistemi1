@@ -19,11 +19,11 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="E-Ticaret Mağazası" textFill="white" />
-            <Button style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Ana Sayfa" />
-            <Button style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Kategoriler" />
-            <Button style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Hesabım" />
+            <Button onAction="#AnaSayfa" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Ana Sayfa" />
+            <Button onAction="#Profilegit" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Hesabım" />
             <Button onAction="#Septegit" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Sepetim" />
             <Button onAction="#Urun_ekle" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Ürün Ekle" />
+         <Button onAction="#Cikisyap" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Çıkış yap" />
         </HBox>
     </top>
 

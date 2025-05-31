@@ -1,8 +1,11 @@
 package com.eticaretsepetsistemi.e_ticaret.Controller;
 
 import com.eticaretsepetsistemi.e_ticaret.HelloApplication;
+import com.eticaretsepetsistemi.e_ticaret.Model.CurrentUser;
+import com.eticaretsepetsistemi.e_ticaret.Model.Kullanici;
 import com.eticaretsepetsistemi.e_ticaret.Services.SQL_Service;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -66,38 +69,53 @@ public class LoginController {
         } else {
             System.out.println("Kayıt başarısız!");
         }
+    }private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
+
     @FXML
     private void girisYap() {
         String email = loginUsernameField.getText().trim();
         String sifre = loginPasswordField.getText();
 
         if(email.isEmpty() || sifre.isEmpty()) {
-            System.out.println("Lütfen e-posta ve şifre alanlarını doldurun.");
+            showAlert("Hata", "Lütfen e-posta ve şifre alanlarını doldurun.");
             return;
         }
 
-        // SQL sorgusu - kullanıcı var mı kontrolü
+        // SQL injection'a karşı korumalı sorgu
         String sql = String.format("SELECT * FROM Kullanicilar WHERE Ad='%s' AND sifre='%s'",
                 email.replace("'", "''"),
                 sifre.replace("'", "''"));
+
         SQL_Service db = new SQL_Service();
         ResultSet rs = db.select(sql);
 
         try {
             if(rs != null && rs.next()) {
-                // Kullanıcı bulundu, giriş başarılı
-                String role = rs.getString("user_role");
-                System.out.println("Giriş başarılı! Kullanıcı rolü: " + role);
+                // Kullanıcı bilgilerini al ve CurrentUser'a kaydet
+                Kullanici user = new Kullanici();
+                user.setKullaniciID(rs.getInt("kullaniciID"));
+                user.setAd(rs.getString("ad"));
+                user.setSoyad(rs.getString("soyad"));
+                user.setEposta(rs.getString("eposta"));
+                // Şifre veritabanından okunuyor ama modelde saklanması güvenlik açığı olabilir
+
+                CurrentUser.setUser(user);
+
+                System.out.println("Giriş başarılı! Hoş geldiniz: " + CurrentUser.getFullName());
                 HelloApplication.setRoot("hello-view");
-                // Burada role göre yönlendirme yapabilirsin
             } else {
-                System.out.println("E-posta veya şifre hatalı!");
+                showAlert("Hata", "E-posta veya şifre hatalı!");
             }
         } catch (SQLException e) {
-            System.out.println("Giriş sırasında hata: " + e.getMessage());
+            showAlert("Hata", "Giriş sırasında bir hata oluştu: " + e.getMessage());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            showAlert("Hata", "Sayfa yüklenirken bir hata oluştu.");
         }
     }
 

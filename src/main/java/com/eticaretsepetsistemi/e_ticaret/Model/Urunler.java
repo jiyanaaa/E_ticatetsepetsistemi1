@@ -22,6 +22,9 @@ public class Urunler {
         this.stok = stok;
         this.kategori = kategori;
     }
+    public Urunler() {
+
+    }
 
     public int getUrunID() {
         return urunID;
@@ -45,5 +48,18 @@ public class Urunler {
 
     public String getKategori() {
         return kategori;
+    }
+
+    public void setUrunID(int urunID) {
+        this.urunID = urunID;
+    }
+
+    public void setAd(String urunAdi) {
+
+        this.urunAdi = urunAdi;
+    }
+
+    public void setFiyat(double urunFiyat) {
+        this.fiyat = urunFiyat;
     }
 }
